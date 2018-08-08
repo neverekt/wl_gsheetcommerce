@@ -22,6 +22,7 @@ if(!function_exists("wl_opciones_gsheet_c_init"))
 	{
 		register_setting("wl-group","wl_gsheet_ccliente");
 		register_setting("wl-group","wl_gsheet_csegura");
+		register_setting("wl-group","wl_gsheet_csheetcode");
 	}
 }
 
@@ -71,6 +72,17 @@ if(!function_exists("get_wl_opciones_gsheet_c"))
 							<input class="regular-text" type="text" name="wl_gsheet_csegura" value="<?php echo get_option("wl_gsheet_csegura")?>">
 								<br />
 								<small>Ingrese el valor de la clave segura que generó Woocommerce para conectar con la API.</small>
+							</input>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">
+							<label for="wl_gsheet_csheetcode">ID de Hoja de Google</label>
+						</th>
+						<td>
+							<input class="regular-text" type="text" name="wl_gsheet_csheetcode" value="<?php echo get_option("wl_gsheet_csheetcode")?>">
+								<br />
+								<small>Ingrese el ID de la hoja de cálculo de Google. (Lo puede obtener desde url de Google Drive, desde la parte que se muestra en el ejemplo: https://docs.google.com/spreadsheets/d/CodigoDeIDdelArchivo/edit)</small>
 							</input>
 						</td>
 					</tr>

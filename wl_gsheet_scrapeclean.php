@@ -1,6 +1,9 @@
 ﻿<?php
-$url = 'https://spreadsheets.google.com/feeds/list/1xvmcXGErWGQigpjVkXJrq4kD2lw6hXWrBX6JNSY26v8/od6/public/values?alt=json';
-$file= file_get_contents($url);
+$baseUrl = 'https://spreadsheets.google.com/feeds/list/';
+$idGsheet = '1xvmcXGErWGQigpjVkXJrq4kD2lw6hXWrBX6JNSY26v8';
+$endUrl = '/od6/public/values?alt=json';
+$sheetUri = $baseUrl.$idGsheet.$endUrl;
+$file= file_get_contents($sheetUri);
 $json = json_decode($file);
 $rows = $json->{'feed'}->{'entry'};
 foreach($rows as $row) {

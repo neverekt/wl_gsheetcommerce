@@ -1,5 +1,6 @@
 {
     "require": {
-        "automattic/woocommerce": "^2.0"
+        "automattic/woocommerce": "^2.0",
+        "jonnyw/php-phantomjs": "4.*"
     }
 }
