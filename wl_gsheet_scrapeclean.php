@@ -59,7 +59,7 @@ foreach($rows as $row) {
 									'width' => $row->{'gsx$ancho'}->{'$t'},
 									),
 								'tags' => array (
-									rtrim($row->{'gsx$tags'}->{'$t'}, ','),
+									array_map('trim', explode(',', $row->{'gsx$tags'}->{'$t'})),
 									),
 							)
 					);
