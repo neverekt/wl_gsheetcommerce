@@ -12,7 +12,9 @@ foreach($rows as $row) {
   
 	array_push($arr, array(					
 								'sku' => $row->{'gsx$codigo'}->{'$t'},
+								'categories' => $row->{'gsx$categoria'}->{'$t'},
 								'name' => $row->{'gsx$nombreproducto'}->{'$t'},
+								'type' => 'simple',
 								'stock_quantity' => $row->{'gsx$stock'}->{'$t'}
 							)
 					);
