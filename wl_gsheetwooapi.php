@@ -64,7 +64,7 @@
 			$sku = $product['sku'];
 			$description = $product['description'];
 			$images = $product['images'];
-			$articulos = $product['articulos'];
+			$articulos = $product['articles'];
 			$categories = $product['categories'];
 			$categoriesIds = array();
 			foreach ($images as $image) {

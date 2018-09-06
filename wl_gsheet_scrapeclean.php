@@ -33,6 +33,11 @@ foreach($rows as $row) {
 		$countImg++;
 	}
 	
+	if ($row->{'gsx$stock'}->{'$t'} == 0) {
+		$in_stock = 'false';
+	} else {
+		$in_stock = 'true';
+	}
 	
 	array_push($arr, array(					
 								'sku' => $row->{'gsx$codigo'}->{'$t'},
@@ -41,6 +46,13 @@ foreach($rows as $row) {
 								'slug' => url($row->{'gsx$nombreproducto'}->{'$t'}),
 								'type' => 'simple',
 								'description' => $row->{'gsx$descripcion'}->{'$t'},
+								'in_stock' => $in_stock,
+								'articles' => array (
+										'regular_price' => $row->{'gsx$precio'}->{'$t'},
+										'descuento' => 0,
+										'impuesto' => 0,
+										'stock_quantity' => $row->{'gsx$stock'}->{'$t'},
+									),
 								'images' => array (
 										'image0' => $image0,
 										'image1' => $image1,
@@ -53,8 +65,6 @@ foreach($rows as $row) {
 										'image8' => $image8,
 										'image9' => $image9,
 									),
-								'stock_quantity' => $row->{'gsx$stock'}->{'$t'},
-								'regular_price' => $row->{'gsx$precio'}->{'$t'},
 								'dimensions' => array (
 									'length' => $row->{'gsx$largo'}->{'$t'},
 									'height' => $row->{'gsx$alto'}->{'$t'},
