@@ -1,5 +1,5 @@
 ﻿<?php
-header("Content-Type: application/json");
+//header("Content-Type: application/json");
 $baseUrl = 'https://spreadsheets.google.com/feeds/list/';
 $idGsheet = '1xvmcXGErWGQigpjVkXJrq4kD2lw6hXWrBX6JNSY26v8';
 $endUrl = '/od6/public/values?alt=json';
@@ -76,5 +76,10 @@ foreach($rows as $row) {
   // echo '</p>'; 
 }
 
-echo json_encode($arr);
+//echo json_encode($arr);
+
+$fp = fopen('productos.json', 'w+');
+fwrite($fp, json_encode($arr));
+fclose($fp);
+echo "archivo creado";
 ?>
