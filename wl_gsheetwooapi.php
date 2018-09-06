@@ -32,7 +32,7 @@
 	 */
 	function getJsonFromFile()
 	{
-		$file = '../db/productos.json';
+		$file = 'productos.json';
 		$json = json_decode(file_get_contents($file), true);
 		return $json;
 	}
@@ -59,13 +59,13 @@
 			$productExist = checkProductBySku($product['sku']);
 			$imagesFormated = array();
 			/*Main information */
-			$name = $product['titulo'];
-			$slug = $product['url'];
+			$name = $product['name'];
+			$slug = $product['slug'];
 			$sku = $product['sku'];
-			$description = $product['desc'];
-			$images = $product['pics'];
+			$description = $product['description'];
+			$images = $product['images'];
 			$articulos = $product['articulos'];
-			$categories = $product['categorias'];
+			$categories = $product['categories'];
 			$categoriesIds = array();
 			foreach ($images as $image) {
 				$imagesFormated[] = [
